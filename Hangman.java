@@ -117,7 +117,7 @@ public class Hangman extends ConsoleProgram {
 	//convert the input String into char
 	private char convertToCh(String input) {
 		char ch='-';
-		boolean singleInput=!(input.charAt(1)>='\000' || input.charAt(1)<='\177');
+		boolean singleInput=(input.length()==1);
 		boolean validInput=Character.isLetter(input.charAt(0));
 		if (singleInput && validInput) {
 			ch=input.charAt(0);
