@@ -116,13 +116,8 @@ public class CopyOfHangman extends ConsoleProgram {
 	}
 	
 	/*
-	 * Right guess: that doesn't count for one guess, 
-	 * the prompt shown is "That guess is correct" and 
-	 * their guessed letter appears in all the right places in the word.
-	 * Wrong guess: they have one fewer guess, the word doesn't change, 
-	 * and the prompt shown is "There is no X's in the word."
+	 * check whether the input of user is in the secret word and tells the player
 	 */
-	
 	private void compareString(String input) {
 		input=input.toUpperCase();
 		char ch=convertToCh(input);
@@ -144,7 +139,14 @@ public class CopyOfHangman extends ConsoleProgram {
 		return appear;
 	}
 	
-	//give response to player whether their guess is correct
+	/*
+	 * give response to player whether their guess is correct.
+	 * Right guess: that doesn't count for one guess, 
+	 * the prompt shown is "That guess is correct" and 
+	 * their guessed letter appears in all the right places in the word.
+	 * Wrong guess: they have one fewer guess, the word doesn't change, 
+	 * and the prompt shown is "There is no X's in the word."
+	 */
 	private void giveResponse(boolean appear, char ch) {
 		if (appear) {
 			println("That guess is correct.");
