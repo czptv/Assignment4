@@ -30,7 +30,7 @@ public class Hangman extends ConsoleProgram {
 	//play the whole game
 	
 	public void run() {
-		println("Welcom to Hangman!");
+		println("Welcome to Hangman!");
 		word=getWord();
 		setup();
 		guess();
