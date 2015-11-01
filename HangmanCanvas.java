@@ -7,10 +7,10 @@
 import acm.graphics.*;
 
 public class HangmanCanvas extends GCanvas {
-
+	
 /** Resets the display so that only the scaffold appears */
 	public void reset() {
-		/* You fill this in */
+		removeAll();
 	}
 
 /**
@@ -19,7 +19,11 @@ public class HangmanCanvas extends GCanvas {
  * been guessed so far; unguessed letters are indicated by hyphens.
  */
 	public void displayWord(String word) {
-		/* You fill this in */
+		if (display!=null) {
+			remove (display);
+		}
+		display=new GLabel(word, 100, 800);
+		add(display);
 	}
 
 /**
@@ -29,7 +33,13 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		/* You fill this in */
+		incorrectGuess+=letter;
+		GLabel incorrectList=new GLabel(incorrectGuess, 100, 900);
+		incorrectGuess.setFont(""-20");
+		add (incorrectList);
+		switch (incorrectGuess.length()) {
+			
+		}
 	}
 
 /* Constants for the simple version of the picture (in pixels) */
@@ -44,5 +54,9 @@ public class HangmanCanvas extends GCanvas {
 	private static final int HIP_WIDTH = 36;
 	private static final int LEG_LENGTH = 108;
 	private static final int FOOT_LENGTH = 28;
+	
+// Instance variables
+	private GLabel display;
+	private String incorrectGuess;
 
 }
