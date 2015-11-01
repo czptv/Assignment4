@@ -72,7 +72,7 @@ public class Hangman extends ConsoleProgram {
 		while (guessLeft>0) {
 			println("The word now looks like this: " + display);
 			if (guessLeft != 1) {
-				println("You have " + guessLeft + "guesses left.");
+				println("You have " + guessLeft + " guesses left.");
 			} else {
 				println("You have only one guess left.");
 			}
@@ -97,14 +97,13 @@ public class Hangman extends ConsoleProgram {
 			if (input.equals(word.substring(i, i+1))) {
 				appear=true;
 				display=display.substring(0, i) + input + display.substring(i+1);
-			} else {
-				guessLeft--;
-			}
+			} 
 		}
 		if (appear) {
 			println("That guess is correct.");
 		} else {
-			println("There are no" + input + "'s in the word.");
+			guessLeft--;
+			println("There are no " + input + "'s in the word.");
 		}
 	}
 	
