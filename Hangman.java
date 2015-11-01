@@ -53,6 +53,7 @@ public class Hangman extends ConsoleProgram {
 		for (int i=0; i<wordLength; i++) {
 			display+="-";
 		}
+		
 	}
 	
 	/*
@@ -92,9 +93,10 @@ public class Hangman extends ConsoleProgram {
 		char ch=input.charAt(0);
 		boolean invalidInput=false;
 		if (!Character.isLetter(ch)) {
-			println("Invalid guess. There are only letters in the word.");
+			println("Invalid guess.");
+			println("There are only letters in the word.");
 			invalidInput=true;
-			guessLeft++;
+			guessLeft++; //invalid guess doesn't can't as one guess.
 		}
 	}
 	
