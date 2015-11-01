@@ -5,6 +5,7 @@
  * class that you will reimplement for Part III of the assignment.
  */
 
+import acm.program.*;
 import acm.util.*;
 import java.io.*;
 
@@ -12,16 +13,17 @@ public class HangmanLexicon {
 
 	// This is the HangmanLexicon constructor
 	public HangmanLexicon() {
-		BufferedReader rd=openFile("");
+		BufferedReader rd=openFile("Please enter filename: ");
 		
 		
 	}
 	
-	private BufferedReader openFile() {
+	private BufferedReader openFile(String prompt) {
 		BufferedReader rd=null;
 		while (true) {
 			try {
-				
+				String filename=readLine(prompt);
+				rd=new BufferedReader(new FileReader(filename));
 			} catch (IOException ex){
 				
 			}
