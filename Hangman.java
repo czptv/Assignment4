@@ -21,7 +21,7 @@ public class Hangman extends ConsoleProgram {
 	private static final int GUESS=8;
 	
 	//instance variables
-	private HangmanLexicon wordBase;
+	private HangmanLexicon wordBase= new HangmanLexicon();
 	private int guessLeft=GUESS;
 	private String word="";
 	private String display=""; //the word displayed on the screen according to what the player already entered.
