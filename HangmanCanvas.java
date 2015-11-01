@@ -5,13 +5,15 @@
  */
 
 import acm.graphics.*;
+import acm.util.ErrorException;
 
 public class HangmanCanvas extends GCanvas {
 	
-/**
- * draw the scaffold and tiny rope.
- */
-	private void setup() {
+/** Resets the display so that only the scaffold appears */
+	public void reset() {
+		if (getElementCount()!=0) {
+			removeAll();
+		}
 		int rightX=getWidth()/2;		
 		int leftX=rightX-BEAM_LENGTH;
 		int midY=(getHeight()-BODY_LENGTH)/2-2*HEAD_RADIUS-DIFF;
@@ -23,11 +25,6 @@ public class HangmanCanvas extends GCanvas {
 		add(beam);
 		GLine rope=new GLine(rightX, upY, rightX, midY);
 		add(rope);
-	}
-	
-/** Resets the display so that only the scaffold appears */
-	public void reset() {
-		removeAll();
 	}
 
 /**
@@ -80,6 +77,7 @@ public class HangmanCanvas extends GCanvas {
 			case 8: 
 				drawRightFoot();
 				break;	
+			default: throw new ErrorException("getWord: Illegal index");
 		}
 	}
 
