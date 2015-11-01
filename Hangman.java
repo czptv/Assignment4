@@ -78,9 +78,11 @@ public class Hangman extends ConsoleProgram {
 		while (guessLeft>0) {
 			givePrompt();
 			String letter=readLine("You guess: "); //set font
-			hintInvalidInput(letter);
-			compareString(letter);
-			canvas.displayWord(display);
+			boolean valid=hintInvalidInput(letter);
+			if (valid) {
+				compareString(letter);
+				canvas.displayWord(display);
+			}
 			if (display.equals(word)) break;
 		}
 	}
@@ -104,26 +106,18 @@ public class Hangman extends ConsoleProgram {
 	 * 
 	 */
 	
-	private void hintInvalidInput(String input) {
+	private boolean hintInvalidInput(String input) {
 		input=input.toUpperCase();
-		char ch=convertToCh(input);
-		if (!Character.isLetter(ch)) {
+		boolean singleInput=(input.length()==1);
+		boolean letterInput=Character.isLetter(input.charAt(0));
+		boolean validInput=singleInput && letterInput;
+		if (!validInput) {
 			println("Invalid guess.");
 			println("There are only letters in the word.");
-			guessLeft++; //invalid guess doesn't can't as one guess.
 		}
+		return validInput;
 	}
 	
-	//convert the input String into char
-	private char convertToCh(String input) {
-		char ch='-';
-		boolean singleInput=(input.length()==1);
-		boolean validInput=Character.isLetter(input.charAt(0));
-		if (singleInput && validInput) {
-			ch=input.charAt(0);
-		}
-		return ch;
-	}
 	
 	/*
 	 * check whether the input of user is in the secret word and tells the player
@@ -131,7 +125,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private void compareString(String input) {
 		input=input.toUpperCase();
-		char ch=convertToCh(input);
+		char ch=input.charAt(0);
 		boolean appear=checkPresence(ch);
 		giveResponse(appear,ch);
 		
