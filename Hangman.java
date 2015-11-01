@@ -38,7 +38,6 @@ public class Hangman extends ConsoleProgram {
 	//play the whole game	
 	
 	public void run() {
-		canvas.reset();
 		println("Welcome to Hangman!");
 		word=getWord();
 		setup();

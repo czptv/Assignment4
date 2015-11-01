@@ -26,24 +26,14 @@ public class CopyOfHangman extends ConsoleProgram {
 	private String word="";
 	private String display=""; //the word displayed on the screen according to what the player already entered.
 	private RandomGenerator rgen=RandomGenerator.getInstance();
-	private HangmanCanvas canvas;
 	
-	//initiate the canvas
-	
-	public void init() {
-		canvas=new HangmanCanvas();
-		add(canvas);
-	}
 	
 	//play the whole game	
 	
 	public void run() {
-		canvas.reset();
 		println("Welcome to Hangman!");
 		word=getWord();
 		setup();
-		canvas.reset();
-		canvas.displayWord(display);
 		guess();
 		end();
 	}
@@ -81,7 +71,6 @@ public class CopyOfHangman extends ConsoleProgram {
 			String letter=readLine("You guess: "); //set font
 			hintInvalidInput(letter);
 			compareString(letter);
-			canvas.displayWord(display);
 			if (display.equals(word)) break;
 		}
 	}
@@ -161,7 +150,6 @@ public class CopyOfHangman extends ConsoleProgram {
 			println("That guess is correct.");
 		} else {
 			guessLeft--;
-			canvas.noteIncorrectGuess(ch);
 			println("There are no " + ch + "'s in the word.");
 		}
 	}
