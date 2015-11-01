@@ -77,7 +77,7 @@ public class Hangman extends ConsoleProgram {
 				println("You have only one guess left.");
 			}
 			String letter=readLine("You guess: "); //set font
-			if (hintInvalidInput(letter)) break;
+			hintInvalidInput(letter);
 			compareString(letter);
 			if (display.equals(word)) break;
 		}
@@ -87,15 +87,15 @@ public class Hangman extends ConsoleProgram {
 	 * 
 	 */
 	
-	private boolean hintInvalidInput(String input) {
+	private void hintInvalidInput(String input) {
 		input=input.toUpperCase();
 		char ch=input.charAt(0);
 		boolean invalidInput=false;
 		if (!Character.isLetter(ch)) {
-			println("Invalid guess.");
+			println("Invalid guess. There are only letters in the word.");
 			invalidInput=true;
+			guessLeft++;
 		}
-		return invalidInput;
 	}
 	
 	/*
