@@ -77,7 +77,7 @@ public class Hangman extends ConsoleProgram {
 	private void guess() {
 		while (guessLeft>0) {
 			givePrompt();
-			String letter=readLine("You guess: "); //set font
+			String letter=readLine("Your guess: "); //set font
 			boolean valid=hintInvalidInput(letter);
 			if (valid) {
 				compareString(letter);
