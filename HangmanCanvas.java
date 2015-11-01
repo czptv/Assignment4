@@ -38,7 +38,7 @@ public class HangmanCanvas extends GCanvas {
 		}
 		display=new GLabel(word);
 		display.setFont("-30");
-		add(display, 100, 500);
+		add(display, 100, 400);
 	}
 
 /**
@@ -51,7 +51,7 @@ public class HangmanCanvas extends GCanvas {
 		incorrectGuess+=letter;
 		GLabel incorrectList=new GLabel(incorrectGuess);
 		incorrectList.setFont("-20");
-		add (incorrectList, 100, 600);
+		add (incorrectList, 100, 470);
 		switch (incorrectGuess.length()) {
 			case 1: 
 				drawHead();
