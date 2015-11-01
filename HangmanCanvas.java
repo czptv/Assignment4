@@ -174,6 +174,6 @@ public class HangmanCanvas extends GCanvas {
 	
 // Instance variables
 	private GLabel display;
-	private String incorrectGuess;
+	private String incorrectGuess="";
 
 }
