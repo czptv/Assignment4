@@ -109,7 +109,10 @@ public class Hangman extends ConsoleProgram {
 	private boolean hintInvalidInput(String input) {
 		input=input.toUpperCase();
 		boolean singleInput=(input.length()==1);
-		boolean letterInput=Character.isLetter(input.charAt(0));
+		boolean letterInput=false;
+		if(input.length()==1) {
+			letterInput=Character.isLetter(input.charAt(0));
+		} 
 		boolean validInput=singleInput && letterInput;
 		if (!validInput) {
 			println("Invalid guess.");
