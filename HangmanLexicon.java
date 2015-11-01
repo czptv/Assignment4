@@ -6,9 +6,28 @@
  */
 
 import acm.util.*;
+import java.io.*;
 
 public class HangmanLexicon {
 
+	// This is the HangmanLexicon constructor
+	public HangmanLexicon() {
+		BufferedReader rd=openFile("");
+		
+		
+	}
+	
+	private BufferedReader openFile() {
+		BufferedReader rd=null;
+		while (true) {
+			try {
+				
+			} catch (IOException ex){
+				
+			}
+		}
+	}
+	
 /** Returns the number of words in the lexicon. */
 	public int getWordCount() {
 		return 10;
