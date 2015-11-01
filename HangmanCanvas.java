@@ -38,7 +38,7 @@ public class HangmanCanvas extends GCanvas {
 		}
 		display=new GLabel(word);
 		display.setFont("-20");
-		add(display, 50, 430);
+		add(display, 50, 440);
 	}
 
 /**
@@ -145,7 +145,7 @@ public class HangmanCanvas extends GCanvas {
 	private void drawLeftFoot(){
 		int rx=getWidth()/2-HIP_WIDTH;
 		int lx=rx-FOOT_LENGTH;
-		int y=(getWidth()+BODY_LENGTH)/2-DIFF+LEG_LENGTH;
+		int y=(getHeight()+BODY_LENGTH)/2-DIFF+LEG_LENGTH;
 		GLine feet=new GLine(rx,y,lx,y);
 		add(feet);
 	}
@@ -153,7 +153,7 @@ public class HangmanCanvas extends GCanvas {
 	private void drawRightFoot(){
 		int lx=getWidth()/2+HIP_WIDTH;
 		int rx=lx+FOOT_LENGTH;
-		int y=(getWidth()+BODY_LENGTH)/2-DIFF+LEG_LENGTH;
+		int y=(getHeight()+BODY_LENGTH)/2-DIFF+LEG_LENGTH;
 		GLine feet=new GLine(rx,y,lx,y);
 		add(feet);
 	}
