@@ -48,10 +48,7 @@ public class HangmanCanvas extends GCanvas {
  * guesses that appears at the bottom of the window.
  */
 	public void noteIncorrectGuess(char letter) {
-		incorrectGuess+=letter;
-		GLabel incorrectList=new GLabel(incorrectGuess);
-		incorrectList.setFont("-15");
-		add (incorrectList, 50, 470);
+		updateIncorrectList(letter);
 		switch (incorrectGuess.length()) {
 			case 1: 
 				drawHead();
@@ -81,7 +78,12 @@ public class HangmanCanvas extends GCanvas {
 		}
 	}
 
-	
+	private void updateIncorrectList(char letter){
+		incorrectGuess+=letter;
+		GLabel incorrectList=new GLabel(incorrectGuess);
+		incorrectList.setFont("-15");
+		add (incorrectList, 50, 470);
+	}
 	private void drawHead() {
 		int d=2*HEAD_RADIUS;
 		int x=getWidth()/2-HEAD_RADIUS;
