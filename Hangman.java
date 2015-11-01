@@ -32,7 +32,7 @@ public class Hangman extends ConsoleProgram {
 	public void run() {
 		println("Welcom to Hangman!");
 		word=getWord();
-		setDisplay();
+		setup();
 		guess();
 		end();
 	}
@@ -46,6 +46,15 @@ public class Hangman extends ConsoleProgram {
 		return secretWord;
 	}
 	
+	//set the initial display
+	
+	private void setup() {
+		int wordLength=word.length();
+		for (int i=0; i<wordLength; i++) {
+			display+="_";
+		}
+	}
+	
 	/*
 	 * The players can guess for 8 times in one round. 
 	 * the player can enter guess in either upper or lower case.
@@ -56,21 +65,20 @@ public class Hangman extends ConsoleProgram {
 	 * When you only have one guess left, the prompt is a bit different: 
 	 * "You have only one guess left."
 	 * Whenever player get all the letters in the word, break out of the loop.
-	 * The color of player's guess and the secret word is pruple.
+	 * The color of player's guess and the secret word is purple.
 	 */
 	
 	private void guess() {
 		while (guessLeft>0) {
-			display=getDisplay();//set font
 			println("The word now looks like this: " + display);
 			if (guessLeft != 1) {
 				println("You have " + guessLeft + "guesses left.");
 			} else {
-				println("You have only one guess left.")
+				println("You have only one guess left.");
 			}
 			String letter=readLine("You guess: "); //set font
 			compareString(letter);
-			guessLeft	
+			if (display.equals(word)) break;
 		}
 	}
 	
@@ -88,14 +96,31 @@ public class Hangman extends ConsoleProgram {
 		for (int i=0; i<word.length(); i++) {
 			if (input.equals(word.substring(i, i+1))) {
 				appear=true;
-				
+				display=display.substring(0, i) + input + display.substring(i+1);
+			} else {
+				guessLeft--;
 			}
+		}
+		if (appear) {
+			println("That guess is correct.");
+		} else {
+			println("There are no" + input + "'s in the word.");
 		}
 	}
 	
+	/*
+	 * give the actual word and indicate whether user lose or win
+	 */
 	
-	
-	
+	private void end() {
+		if (guessLeft!=0) {
+			println("You guessed the word: " + word);
+			println("You win.");
+		} else {
+			println("The word was: " + word);
+			println("You lose.");
+		}
+	}
 	
 	
 	
