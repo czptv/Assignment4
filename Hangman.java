@@ -41,7 +41,7 @@ public class Hangman extends ConsoleProgram {
 	
 	private String getWord() {
 		int totalWord=wordBase.getWordCount();
-		int wordSequence=rgen.nextInt(0,totalWord);
+		int wordSequence=rgen.nextInt(0,totalWord-1);
 		String secretWord=wordBase.getWord(wordSequence);
 		return secretWord;
 	}
@@ -51,7 +51,7 @@ public class Hangman extends ConsoleProgram {
 	private void setup() {
 		int wordLength=word.length();
 		for (int i=0; i<wordLength; i++) {
-			display+="_";
+			display+="-";
 		}
 	}
 	
