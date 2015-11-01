@@ -7,6 +7,7 @@
 
 import acm.program.*;
 import acm.util.*;
+import java.util. *;
 import java.io.*;
 
 public class HangmanLexicon {
@@ -14,20 +15,30 @@ public class HangmanLexicon {
 	// This is the HangmanLexicon constructor
 	public HangmanLexicon() {
 		BufferedReader rd=openFile("Please enter filename: ");
-		
+		ArrayList<String> wordList= new ArrayList<String>();
+		try {
+			while (true) {
+				String line=rd.readLine();
+				if(line==null) break;
+				wordList.add(line);
+			}
+		} catch (IOException ex){
+			throw new ErrorException(ex);
+		}
 		
 	}
 	
 	private BufferedReader openFile(String prompt) {
 		BufferedReader rd=null;
-		while (true) {
+		while (rd==null) {
 			try {
 				String filename=readLine(prompt);
 				rd=new BufferedReader(new FileReader(filename));
 			} catch (IOException ex){
-				
+				println("Invalid filename.");
 			}
 		}
+		return rd;
 	}
 	
 /** Returns the number of words in the lexicon. */
