@@ -126,11 +126,7 @@ public class Hangman extends ConsoleProgram {
 	}
 	
 	/*
-	 * Right guess: that doesn't count for one guess, 
-	 * the prompt shown is "That guess is correct" and 
-	 * their guessed letter appears in all the right places in the word.
-	 * Wrong guess: they have one fewer guess, the word doesn't change, 
-	 * and the prompt shown is "There is no X's in the word."
+	 * check whether the input of user is in the secret word and tells the player
 	 */
 	
 	private void compareString(String input) {
@@ -142,7 +138,15 @@ public class Hangman extends ConsoleProgram {
 		
 	}
 	
-	//check whether the input of user is in the secret word
+	/*
+	 * check whether the input of user is in the secret word.
+	 * Right guess: that doesn't count for one guess, 
+	 * the prompt shown is "That guess is correct" and 
+	 * their guessed letter appears in all the right places in the word.
+	 * Wrong guess: they have one fewer guess, the word doesn't change, 
+	 * and the prompt shown is "There is no X's in the word."
+	 */
+	
 	private boolean checkPresence(char ch) {
 		boolean appear=false;
 		for (int i=0; i<word.length(); i++) {
