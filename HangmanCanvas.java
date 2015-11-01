@@ -100,7 +100,7 @@ public class HangmanCanvas extends GCanvas {
 	
 	private void drawLeftArm() {
 		int rx=getWidth()/2; //right x
-		int lx=-rx-UPPER_ARM_LENGTH; //left x
+		int lx=rx-UPPER_ARM_LENGTH; //left x
 		int uy=(getHeight()-BODY_LENGTH)/2-DIFF+ARM_OFFSET_FROM_HEAD; //upper y
 		int ly=uy+LOWER_ARM_LENGTH; //lower y
 		GLine upLeftArm= new GLine(lx,uy,rx,uy);
