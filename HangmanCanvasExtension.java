@@ -14,6 +14,7 @@ public class HangmanCanvasExtension extends GCanvas {
 		if (getElementCount()!=0) {
 			removeAll();
 		}
+		incorrectGuess="";
 		int x=getWidth()/2-140;
 		int y=getHeight()/2-250;
 		GImage scaffold=new GImage("scaffold.png");
@@ -30,7 +31,6 @@ public class HangmanCanvasExtension extends GCanvas {
 		if (display!=null) {
 			remove (display);
 		}
-		incorrectGuess="";
 		display=new GLabel(word);
 		display.setFont("-20");
 		add(display, 50, 440);
