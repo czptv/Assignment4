@@ -8,6 +8,8 @@
 import acm.graphics.*;
 import acm.program.*;
 import acm.util.*;
+
+import java.applet.AudioClip;
 import java.awt.*;
 
 public class HangmanExtension extends ConsoleProgram {
@@ -177,10 +179,14 @@ public class HangmanExtension extends ConsoleProgram {
 	private void giveResponse(boolean appear, char ch) {
 		if (appear) {
 			println("That guess is correct.");
+			AudioClip bounceClip = MediaTools.loadAudioClip("correct");
+			bounceClip.play();
 		} else {
 			guessLeft--;
 			canvas.noteIncorrectGuess(ch);
 			println("There are no " + ch + "'s in the word.");
+			AudioClip bounceClip = MediaTools.loadAudioClip("incorrect");
+			bounceClip.play();
 		}
 	}
 	/*
