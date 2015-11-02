@@ -63,8 +63,10 @@ public class HangmanExtension extends ConsoleProgram {
 	//give players hint about how many rounds do they still have.
 	private void giveRound(int round) {
 		if (round==1) {
+			println("");
 			println("Cherish your last round!");
 		} else {
+			println("");
 			println("You have " + round + " rounds left.");
 		}
 	}
@@ -84,7 +86,7 @@ public class HangmanExtension extends ConsoleProgram {
 		int wordLength=word.length();
 		display="";
 		for (int i=0; i<wordLength; i++) {
-			display+="-";
+			display+="_";
 		}
 		
 	}
