@@ -112,16 +112,16 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawLeftLeg() {
-		int x=getWidth()/2-15;
-		int y=(getHeight())/2-10;
+		int x=getWidth()/2-17;
+		int y=(getHeight())/2-90;
 		GImage leftLeg=new GImage("leftFoot.jpg",x,y);
 		leftLeg.scale(0.2,0.2);
 		add(leftLeg);
 	}
 	
 	private void drawRightLeg() {
-		int x=getWidth()/2+5;
-		int y=(getHeight())/2-100;
+		int x=getWidth()/2+7;
+		int y=(getHeight())/2-90;
 		GImage rightLeg=new GImage("rightFoot.jpg",x,y);
 		rightLeg.scale(0.2,0.2);
 		add(rightLeg);
