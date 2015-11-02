@@ -64,7 +64,7 @@ public class HangmanCanvasExtension extends GCanvas {
 				drawRightLeg();
 				break;	
 			case 7: 
-				drawLeftFoot();
+				drawTail();
 				break;	
 			case 8: 
 				drawRightFoot();
@@ -127,12 +127,12 @@ public class HangmanCanvasExtension extends GCanvas {
 		add(rightLeg);
 	}
 	
-	private void drawLeftFoot(){
-		int rx=getWidth()/2-HIP_WIDTH;
-		int lx=rx-FOOT_LENGTH;
-		int y=(getHeight()+BODY_LENGTH)/2-DIFF+LEG_LENGTH;
-		GLine feet=new GLine(rx,y,lx,y);
-		add(feet);
+	private void drawTail(){
+		int x=getWidth()/2+35;
+		int y=(getHeight())/2-93;
+		GImage tail=new GImage("tail.jpg",x,y);
+		tail.scale(0.2,0.2);
+		add(tail);
 	}
 	
 	private void drawRightFoot(){
