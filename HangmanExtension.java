@@ -19,6 +19,11 @@ public class HangmanExtension extends ConsoleProgram {
 	 */
 	private static final int GUESS=8;
 	
+	/**
+	 * the round the player has
+	 */
+	private static final int ROUND=10;
+	
 	//instance variables
 	private HangmanLexicon wordBase= new HangmanLexicon();
 	private int guessLeft=GUESS;
@@ -37,13 +42,16 @@ public class HangmanExtension extends ConsoleProgram {
 	//play the whole game	
 	
 	public void run() {
-		println("Welcome to Hangman!");
-		word=getWord();
-		setup();
-		canvas.reset();
-		canvas.displayWord(display);
-		guess();
-		end();
+		for(int i=0;i<ROUND;i++) {
+			println("Welcome to Hangman!");
+			word=getWord();
+			setup();
+			canvas.reset();
+			canvas.displayWord(display);
+			guess();
+			end();
+		}
+		
 	}
 	
 	//get a random word from the secret word base.
