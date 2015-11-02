@@ -50,6 +50,7 @@ public class HangmanExtension extends ConsoleProgram {
 			canvas.displayWord(display);
 			guess();
 			end();
+			guessLeft=GUESS;
 		}
 		
 	}
@@ -67,6 +68,7 @@ public class HangmanExtension extends ConsoleProgram {
 	
 	private void setup() {
 		int wordLength=word.length();
+		display="";
 		for (int i=0; i<wordLength; i++) {
 			display+="-";
 		}
