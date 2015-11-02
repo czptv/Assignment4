@@ -89,8 +89,9 @@ public class HangmanCanvasExtension extends GCanvas {
 	
 	private void drawBody() {
 		int x=getWidth()/2-20;
-		int y=(getHeight()-BODY_LENGTH)/2;
+		int y=(getHeight()-BODY_LENGTH)/2-70;
 		GImage body=new GImage("body.jpg",x,y);
+		body.scale(0.25,0.25);
 		add(body);
 	}
 	
