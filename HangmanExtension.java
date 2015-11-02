@@ -15,7 +15,7 @@ public class HangmanExtension extends ConsoleProgram {
 	//constants
 	
 	/**
-	 * the total guesses the user has
+	 * the total guesses the user has in one round
 	 */
 	private static final int GUESS=8;
 	
@@ -68,9 +68,7 @@ public class HangmanExtension extends ConsoleProgram {
 	/*
 	 * The players can guess for 8 times in one round. 
 	 * the player can enter guess in either upper or lower case.
-
 	 * Whenever player get all the letters in the word, break out of the loop.
-	 * The color of player's guess and the secret word is purple.
 	 */
 	
 	private void guess() {
