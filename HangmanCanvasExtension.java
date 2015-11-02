@@ -17,6 +17,7 @@ public class HangmanCanvasExtension extends GCanvas {
 		int x=getWidth()/2-300;
 		int y=getHeight()/2-500;
 		GImage scaffold=new GImage("scaffold.png");
+		scaffold.scale(0.3,0.3);
 		add(scaffold,x,y);
 	}
 
