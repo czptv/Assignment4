@@ -32,12 +32,12 @@ public class HangmanExtension extends ConsoleProgram {
 	private String word="";
 	private String display=""; //the word displayed on the screen according to what the player already entered.
 	private RandomGenerator rgen=RandomGenerator.getInstance();
-	private HangmanCanvas canvas;
+	private HangmanCanvasExtension canvas;
 	
 	//initiate the canvas
 	
 	public void init() {
-		canvas=new HangmanCanvas();
+		canvas=new HangmanCanvasExtension();
 		add(canvas);
 	}
 	

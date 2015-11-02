@@ -14,17 +14,10 @@ public class HangmanCanvasExtension extends GCanvas {
 		if (getElementCount()!=0) {
 			removeAll();
 		}
-		int rightX=getWidth()/2;		
-		int leftX=rightX-BEAM_LENGTH;
-		int midY=(getHeight()-BODY_LENGTH)/2-2*HEAD_RADIUS-DIFF;
-		int upY=midY-ROPE_LENGTH;
-		int lowY=upY+SCAFFOLD_HEIGHT;
-		GLine scaffold=new GLine(leftX, upY, leftX, lowY);
-		add(scaffold);
-		GLine beam=new GLine(leftX, upY, rightX, upY);
-		add(beam);
-		GLine rope=new GLine(rightX, upY, rightX, midY);
-		add(rope);
+		int x=getWidth()/2-300;
+		int y=getHeight()/2-500;
+		GImage scaffold=new GImage("scaffold.jpg");
+		add(scaffold,x,y);
 	}
 
 /**
