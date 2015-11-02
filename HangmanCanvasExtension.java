@@ -88,7 +88,7 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawBody() {
-		int x=getWidth()/2+5;
+		int x=getWidth()/2+10;
 		int upY=(getHeight())/2-120;
 		int lowY=upY+BODY_LENGTH;
 		GLine body=new GLine(x,upY,x,lowY);
@@ -96,25 +96,17 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawLeftArm() {
-		int rx=getWidth()/2; //right x
-		int lx=rx-UPPER_ARM_LENGTH; //left x
-		int uy=(getHeight()-BODY_LENGTH)/2-DIFF+ARM_OFFSET_FROM_HEAD; //upper y
-		int ly=uy+LOWER_ARM_LENGTH; //lower y
-		GLine upLeftArm= new GLine(lx,uy,rx,uy);
-		add(upLeftArm);
-		GLine lowLeftArm= new GLine(lx,uy,lx,ly);
-		add(lowLeftArm);
+		int x=getWidth()/2-20;
+		int y=(getHeight())/2-100; //upper y
+		GImage leftArm= new GImage("leftHand.jpg",x,y);
+		add(leftArm);
 	}
 	
 	private void drawRightArm() {
-		int lx=getWidth()/2; //right x
-		int rx=lx+UPPER_ARM_LENGTH; //left x
-		int uy=(getHeight()-BODY_LENGTH)/2-DIFF+ARM_OFFSET_FROM_HEAD; //upper y
-		int ly=uy+LOWER_ARM_LENGTH; //lower y
-		GLine upRightArm= new GLine(lx,uy,rx,uy);
-		add(upRightArm);
-		GLine lowRightArm= new GLine(rx,uy,rx,ly);
-		add(lowRightArm);
+		int x=getWidth()/2-20; 
+		int y=(getHeight())/2-100;
+		GImage rightArm= new GImage("rightHand",x,y);
+		add(rightArm);
 	}
 	
 	private void drawLeftLeg() {
