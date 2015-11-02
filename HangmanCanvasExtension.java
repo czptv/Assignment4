@@ -30,6 +30,7 @@ public class HangmanCanvasExtension extends GCanvas {
 		if (display!=null) {
 			remove (display);
 		}
+		incorrectGuess="";
 		display=new GLabel(word);
 		display.setFont("-20");
 		add(display, 50, 440);
