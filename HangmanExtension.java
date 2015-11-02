@@ -42,8 +42,10 @@ public class HangmanExtension extends ConsoleProgram {
 	//play the whole game	
 	
 	public void run() {
+		println("Welcome to Hangman!");
 		for(int i=0;i<ROUND;i++) {
-			println("Welcome to Hangman!");
+			int roundLeft=ROUND-i;
+			giveRound(roundLeft);
 			word=getWord();
 			setup();
 			canvas.reset();
@@ -53,6 +55,15 @@ public class HangmanExtension extends ConsoleProgram {
 			guessLeft=GUESS;
 		}
 		
+	}
+	
+	//give players hint about how many rounds do they still have.
+	private void giveRound(int round) {
+		if (round==1) {
+			println("Cherish your last round!");
+		} else {
+			println("You have " + round + " rounds left.");
+		}
 	}
 	
 	//get a random word from the secret word base.
