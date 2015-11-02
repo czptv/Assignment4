@@ -16,7 +16,7 @@ public class HangmanLexicon{
 	ArrayList<String> wordList;
 	
 	// This is the HangmanLexicon constructor
-	public HangmanLexicon() {
+	public HangmanLexicon {
 		BufferedReader rd=openFile("Please enter filename: ");
 		wordList= new ArrayList<String>();
 		try {
