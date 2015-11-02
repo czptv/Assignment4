@@ -88,8 +88,8 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawBody() {
-		int x=getWidth()/2;
-		int upY=(getHeight()-BODY_LENGTH)/2-DIFF;
+		int x=getWidth()/2-5;
+		int upY=(getHeight())/2;
 		int lowY=upY+BODY_LENGTH;
 		GLine body=new GLine(x,upY,x,lowY);
 		add(body);
