@@ -16,7 +16,8 @@ public class HangmanLexicon{
 	ArrayList<String> wordList;
 	
 	// This is the HangmanLexicon constructor
-	public HangmanLexicon {
+	public HangmanLexicon() {
+		super();
 		BufferedReader rd=openFile("Please enter filename: ");
 		wordList= new ArrayList<String>();
 		try {
@@ -40,7 +41,6 @@ public class HangmanLexicon{
 				rd=new BufferedReader(new FileReader(filename));
 			} catch (IOException ex){
 				println("Invalid filename.");
-				println("Please enter another filename.");
 			}
 		}
 		return rd;
