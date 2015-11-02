@@ -88,15 +88,15 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawBody() {
-		int x=getWidth()/2+10;
-		int upY=(getHeight())/2-120;
-		int lowY=upY+BODY_LENGTH;
-		GLine body=new GLine(x,upY,x,lowY);
+		int x=getWidth()/2-10;
+		int y=(getHeight())/2-120;
+		GImage body=new GImage("body.jpg",x,y);
+		body.scale(0.1,0.1);
 		add(body);
 	}
 	
 	private void drawLeftArm() {
-		int x=getWidth()/2-38;
+		int x=getWidth()/2-50;
 		int y=(getHeight())/2-130; //upper y
 		GImage leftArm= new GImage("leftHand.jpg",x,y);
 		leftArm.scale(0.1,0.1);
@@ -104,7 +104,7 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawRightArm() {
-		int x=getWidth()/2+12; 
+		int x=getWidth()/2+30; 
 		int y=(getHeight())/2-115;
 		GImage rightArm= new GImage("rightHand.jpg",x,y);
 		rightArm.scale(0.1,0.1);
