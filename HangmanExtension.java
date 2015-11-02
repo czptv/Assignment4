@@ -44,7 +44,7 @@ public class HangmanExtension extends ConsoleProgram {
 	//play the whole game	
 	
 	public void run() {
-		setFont("Times-15");
+		setFont("Times-12");
 		println("Welcome to Hangman!");
 		for(int i=0;i<ROUND;i++) {
 			int roundLeft=ROUND-i;
@@ -173,7 +173,7 @@ public class HangmanExtension extends ConsoleProgram {
 		for (int i=0; i<word.length(); i++) {
 			if (ch==word.charAt(i)) {
 				appear=true;
-				display=display.substring(0, i) + ch + display.substring(i+1);
+				display=display.substring(0, 3*i) + ch + display.substring(3*i+3);
 			} 
 		}
 		return appear;
