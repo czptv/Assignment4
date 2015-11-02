@@ -12,13 +12,15 @@ import java.io.*;
 
 public class HangmanLexicon extends ConsoleProgram{
 
+	//constants
+	private static final String FILENAME="HangmanLexicon.txt";
+	
 	//instance variables
 	ArrayList<String> wordList= new ArrayList<String>();
 	
-	
 	// This is the HangmanLexicon constructor
 	public HangmanLexicon() {
-		BufferedReader rd=openFile("Please enter filename: ");
+		BufferedReader rd=openFile(FILENAME);
 		try {
 			while (true) {
 				String line=rd.readLine();
@@ -32,11 +34,10 @@ public class HangmanLexicon extends ConsoleProgram{
 		
 	}
 	
-	private BufferedReader openFile(String prompt) {
+	private BufferedReader openFile(String filename) {
 		BufferedReader rd=null;
 		while (rd==null) {
 			try {
-				String filename=readLine(prompt);
 				rd=new BufferedReader(new FileReader(filename));
 			} catch (IOException ex){
 				println("Invalid filename.");
