@@ -44,6 +44,7 @@ public class HangmanExtension extends ConsoleProgram {
 	//play the whole game	
 	
 	public void run() {
+		setFont("Times-15");
 		println("Welcome to Hangman!");
 		for(int i=0;i<ROUND;i++) {
 			int roundLeft=ROUND-i;
@@ -179,14 +180,10 @@ public class HangmanExtension extends ConsoleProgram {
 	private void giveResponse(boolean appear, char ch) {
 		if (appear) {
 			println("That guess is correct.");
-			AudioClip correct = MediaTools.loadAudioClip("correct.au");
-			correct.play();
 		} else {
 			guessLeft--;
 			canvas.noteIncorrectGuess(ch);
 			println("There are no " + ch + "'s in the word.");
-			AudioClip incorrect = MediaTools.loadAudioClip("incorrect.mp3");
-			incorrect.play();
 		}
 	}
 	/*
