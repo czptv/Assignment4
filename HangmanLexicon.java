@@ -10,7 +10,7 @@ import acm.util.*;
 import java.util. *;
 import java.io.*;
 
-public class HangmanLexicon{
+public class HangmanLexicon extends ConsoleProgram{
 
 	//instance variables
 	ArrayList<String> wordList;
