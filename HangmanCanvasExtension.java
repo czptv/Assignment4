@@ -96,16 +96,16 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawLeftArm() {
-		int x=getWidth()/2-35;
-		int y=(getHeight())/2-150; //upper y
+		int x=getWidth()/2-38;
+		int y=(getHeight())/2-130; //upper y
 		GImage leftArm= new GImage("leftHand.jpg",x,y);
 		leftArm.scale(0.1,0.1);
 		add(leftArm);
 	}
 	
 	private void drawRightArm() {
-		int x=getWidth()/2+10; 
-		int y=(getHeight())/2-120;
+		int x=getWidth()/2+12; 
+		int y=(getHeight())/2-115;
 		GImage rightArm= new GImage("rightHand.jpg",x,y);
 		rightArm.scale(0.1,0.1);
 		add(rightArm);
