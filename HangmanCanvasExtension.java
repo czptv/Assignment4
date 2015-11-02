@@ -82,7 +82,7 @@ public class HangmanCanvasExtension extends GCanvas {
 		int x=getWidth()/2-100;
 		int y=(getHeight()-BODY_LENGTH)/2-DIFF-100;
 		GImage head=new GImage("head.jpg");
-		add(head,x,xy);
+		add(head,x,y);
 	}
 	
 	private void drawBody() {
