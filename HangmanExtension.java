@@ -118,6 +118,7 @@ public class HangmanExtension extends ConsoleProgram {
 	 * "You have only one guess left."
 	 */
 	private void givePrompt() {
+		println("");
 		println("The word now looks like this: " + display);
 		if (guessLeft != 1) {
 			println("You have " + guessLeft + " guesses left.");
