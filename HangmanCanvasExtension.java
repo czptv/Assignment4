@@ -67,7 +67,7 @@ public class HangmanCanvasExtension extends GCanvas {
 				drawTail();
 				break;	
 			case 8: 
-				drawRightFoot();
+				drawDeco();
 				break;	
 			default: throw new ErrorException("getWord: Illegal index");
 		}
@@ -135,27 +135,13 @@ public class HangmanCanvasExtension extends GCanvas {
 		add(tail);
 	}
 	
-	private void drawRightFoot(){
-		int lx=getWidth()/2+HIP_WIDTH;
-		int rx=lx+FOOT_LENGTH;
-		int y=(getHeight()+BODY_LENGTH)/2-DIFF+LEG_LENGTH;
-		GLine feet=new GLine(rx,y,lx,y);
-		add(feet);
+	private void drawDeco(){
+		int x=getWidth()/2;
+		int y=(getHeight())/2;
+		GImage deco=new GImage("deco.jpg",x,y);
+		deco.scale(0.1,0.1);
+		add(deco);
 	}
-	
-/* Constants for the simple version of the picture (in pixels) */
-	private static final int SCAFFOLD_HEIGHT = 360;
-	private static final int BEAM_LENGTH = 144;
-	private static final int ROPE_LENGTH = 18;
-	private static final int HEAD_RADIUS = 36;
-	private static final int BODY_LENGTH = 44;
-	private static final int ARM_OFFSET_FROM_HEAD = 28;
-	private static final int UPPER_ARM_LENGTH = 72;
-	private static final int LOWER_ARM_LENGTH = 44;
-	private static final int HIP_WIDTH = 36;
-	private static final int LEG_LENGTH = 108;
-	private static final int FOOT_LENGTH = 28;
-	private static final int DIFF=50; //how higher than the center the person is display
 	
 // Instance variables
 	private GLabel display;
