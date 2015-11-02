@@ -185,7 +185,7 @@ public class HangmanExtension extends ConsoleProgram {
 			guessLeft--;
 			canvas.noteIncorrectGuess(ch);
 			println("There are no " + ch + "'s in the word.");
-			AudioClip incorrect = MediaTools.loadAudioClip("incorrect.m4a");
+			AudioClip incorrect = getAudioClip(getCodeBase(),"incorrect.m4a");
 			incorrect.play();
 		}
 	}
@@ -202,31 +202,4 @@ public class HangmanExtension extends ConsoleProgram {
 			println("You lose.");
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
