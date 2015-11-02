@@ -88,10 +88,10 @@ public class HangmanCanvasExtension extends GCanvas {
 	}
 	
 	private void drawBody() {
-		int x=getWidth()/2-20;
-		int y=(getHeight()-BODY_LENGTH)/2-70;
-		GImage body=new GImage("body.jpg",x,y);
-		body.scale(0.25,0.25);
+		int x=getWidth()/2;
+		int upY=(getHeight()-BODY_LENGTH)/2-DIFF;
+		int lowY=upY+BODY_LENGTH;
+		GLine body=new GLine(x,upY,x,lowY);
 		add(body);
 	}
 	
@@ -160,7 +160,7 @@ public class HangmanCanvasExtension extends GCanvas {
 	private static final int BEAM_LENGTH = 144;
 	private static final int ROPE_LENGTH = 18;
 	private static final int HEAD_RADIUS = 36;
-	private static final int BODY_LENGTH = 144;
+	private static final int BODY_LENGTH = 44;
 	private static final int ARM_OFFSET_FROM_HEAD = 28;
 	private static final int UPPER_ARM_LENGTH = 72;
 	private static final int LOWER_ARM_LENGTH = 44;
