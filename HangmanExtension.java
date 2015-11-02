@@ -173,7 +173,7 @@ public class HangmanExtension extends ConsoleProgram {
 		for (int i=0; i<word.length(); i++) {
 			if (ch==word.charAt(i)) {
 				appear=true;
-				display=display.substring(0, 3*i) + ch + display.substring(3*i+3);
+				display=display.substring(0, 3*i) + " " + ch + " " + display.substring(3*i+3);
 			} 
 		}
 		return appear;
