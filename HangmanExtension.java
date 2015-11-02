@@ -44,7 +44,7 @@ public class HangmanExtension extends ConsoleProgram {
 	//play the whole game	
 	
 	public void run() {
-		setFont("Times-12");
+		setFont("Times-13");
 		println("Welcome to Hangman!");
 		for(int i=0;i<ROUND;i++) {
 			int roundLeft=ROUND-i;
