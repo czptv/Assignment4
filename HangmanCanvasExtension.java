@@ -4,6 +4,8 @@
  * This file keeps track of the Hangman display.
  */
 
+import java.awt.Color;
+
 import acm.graphics.*;
 import acm.util.ErrorException;
 
@@ -67,7 +69,7 @@ public class HangmanCanvasExtension extends GCanvas {
 				drawTail();
 				break;	
 			case 8: 
-				drawDeco();
+				drawLose();
 				break;	
 			default: throw new ErrorException("getWord: Illegal index");
 		}
@@ -135,12 +137,14 @@ public class HangmanCanvasExtension extends GCanvas {
 		add(tail);
 	}
 	
-	private void drawDeco(){
-		int x=getWidth()/2;
-		int y=(getHeight())/2;
-		GImage deco=new GImage("deco.jpg",x,y);
-		deco.scale(0.1,0.1);
-		add(deco);
+	//show the prompt "You lose."
+	private void drawLose(){
+		GLabel lose=new GLabel("You lose.");
+		lose.setFont("Times-30");
+		lose.setColor(Color.red);
+		double x=(getWidth()-lose.getWidth())/2.0;
+		double y=(getHeight()-lose.getAscent())/2.0;
+		add(lose,x,y);
 	}
 	
 // Instance variables
