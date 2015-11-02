@@ -15,9 +15,9 @@ public class HangmanLexicon extends ConsoleProgram{
 	//instance variables
 	ArrayList<String> wordList= new ArrayList<String>();
 	
+	
 	// This is the HangmanLexicon constructor
 	public HangmanLexicon() {
-		super();
 		BufferedReader rd=openFile("Please enter filename: ");
 		try {
 			while (true) {
