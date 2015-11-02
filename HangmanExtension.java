@@ -179,13 +179,13 @@ public class HangmanExtension extends ConsoleProgram {
 	private void giveResponse(boolean appear, char ch) {
 		if (appear) {
 			println("That guess is correct.");
-			AudioClip bounceClip = MediaTools.loadAudioClip("correct.au");
+			AudioClip bounceClip = MediaTools.loadAudioClip("correct");
 			bounceClip.play();
 		} else {
 			guessLeft--;
 			canvas.noteIncorrectGuess(ch);
 			println("There are no " + ch + "'s in the word.");
-			AudioClip bounceClip = MediaTools.loadAudioClip("incorrect.au");
+			AudioClip bounceClip = MediaTools.loadAudioClip("incorrect");
 			bounceClip.play();
 		}
 	}
