@@ -13,13 +13,12 @@ import java.io.*;
 public class HangmanLexicon extends ConsoleProgram{
 
 	//instance variables
-	ArrayList<String> wordList;
+	ArrayList<String> wordList= new ArrayList<String>();
 	
 	// This is the HangmanLexicon constructor
 	public HangmanLexicon() {
 		super();
 		BufferedReader rd=openFile("Please enter filename: ");
-		wordList= new ArrayList<String>();
 		try {
 			while (true) {
 				String line=rd.readLine();
