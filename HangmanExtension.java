@@ -86,7 +86,7 @@ public class HangmanExtension extends ConsoleProgram {
 		int wordLength=word.length();
 		display="";
 		for (int i=0; i<wordLength; i++) {
-			display+="_";
+			display+=" _ ";
 		}
 		
 	}
