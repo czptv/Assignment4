@@ -189,8 +189,8 @@ public class HangmanExtension extends ConsoleProgram {
 			guessLeft--;
 			canvas.noteIncorrectGuess(ch);
 			println("There are no " + ch + "'s in the word.");
-			AudioClip correct = MediaTools.loadAudioClip("incorrect.mp3");
-			correct.play();
+			AudioClip incorrect = MediaTools.loadAudioClip("incorrect.wav");
+			incorrect.play();
 		}
 	}
 	/*
